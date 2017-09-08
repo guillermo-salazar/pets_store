@@ -12,14 +12,12 @@ describe "Pet Parser" do
   it 'should equal specific pet with name doggie' do
     pet = PetParser.from_json('{"id": 0 ,"name": "doggie"}')
 
-    expect(pet).to eq(Pet.new())
-    expect(pet.id).to eq 0
-    expect(pet.name).to eq 'doggie'
+    expect(pet).to eq(Pet.new({'id'=> 0, 'name'=> 'doggie'}))
   end
 
   it "should convert Pet object to json" do
-    pet = PetParser.to_json(Pet.new({'id': 0, 'name': 'puppie'}))
-    expect(pet).to
-    expect(true).to be(false)
+    pet = PetParser.to_json(Pet.new({'id'=> 0, 'name'=> 'puppie'}))
+    expect(pet).to eq('{"id":0,"name":"puppie"}')
+
   end
 end
