@@ -7,5 +7,4 @@ set :environment, :development
 get '/pets' do
 end
 post '/pet' do
-
 end
